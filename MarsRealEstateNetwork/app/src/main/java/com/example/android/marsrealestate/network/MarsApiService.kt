@@ -24,6 +24,9 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import kotlinx.coroutines.Deferred
+import okhttp3.RequestBody
+import retrofit2.http.Body
+import retrofit2.http.POST
 
 private const val BASE_URL = " https://android-kotlin-fun-mars-server.appspot.com/"
 private const val BASE_USER_URL = "http://10.0.2.2:3000/"
@@ -83,6 +86,10 @@ interface UserApiService {
     fun getUsers():
     // The Coroutine Call Adapter allows us to return a Deferred, a Job with a result
             Deferred<List<UserProperty>>
+
+    //all user Profiles
+    @POST("user_profiles")
+    fun createUserProfile(@Body request: RequestBody): Deferred<UserProperty>
 }
 
 /**

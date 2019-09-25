@@ -22,12 +22,12 @@
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="viewModel"
-            type="com.example.android.marsrealestate.overview.OverviewViewModel" />
+            name="upropertyy"
+            type="com.example.android.marsrealestate.network.UserProperty" />
     </data>
     <ImageView
         android:id="@+id/mars_image"
-        app:imageUrl="@{viewModel.uproperty.imgSrcUrl}"
+        app:imageUrl="@{upropertyy.imgSrcUrl}"
         android:layout_width="match_parent"
         android:layout_height="170dp"
         android:scaleType="centerCrop"
