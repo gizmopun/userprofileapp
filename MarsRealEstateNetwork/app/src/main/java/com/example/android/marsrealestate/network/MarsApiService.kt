@@ -61,7 +61,7 @@ private val retrofitUser = Retrofit.Builder()
  */
 interface MarsApiService {
     /**
-     * Returns a Coroutine [Deferred] [List] of [MarsProperty] which can be fetched with await() if
+     * Returns a Coroutine [Deferred] [List] of [Mars1Property] which can be fetched with await() if
      * in a Coroutine scope.
      * The @GET annotation indicates that the "realestate" endpoint will be requested with the GET
      * HTTP method
@@ -74,7 +74,7 @@ interface MarsApiService {
 
 interface UserApiService {
     /**
-     * Returns a Coroutine [Deferred] [List] of [MarsProperty] which can be fetched with await() if
+     * Returns a Coroutine [Deferred] [List] of [Mars1Property] which can be fetched with await() if
      * in a Coroutine scope.
      * The @GET annotation indicates that the "realestate" endpoint will be requested with the GET
      * HTTP method
