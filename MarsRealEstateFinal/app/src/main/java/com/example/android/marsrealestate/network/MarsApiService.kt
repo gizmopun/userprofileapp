@@ -24,9 +24,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import kotlinx.coroutines.Deferred
-import okhttp3.RequestBody
-import retrofit2.http.Body
-import retrofit2.http.POST
 import retrofit2.http.Query
 
 enum class MarsApiFilter(val value: String) {
@@ -34,7 +31,7 @@ enum class MarsApiFilter(val value: String) {
     SHOW_BUY("buy"),
     SHOW_ALL("all") }
 
-private const val BASE_URL = " https://android-kotlin-fun-mars-server.appspot.com/"
+private const val BASE_URL = "http://10.0.2.2:3000/"
 
 /**
  * Build the Moshi object that Retrofit will be using, making sure to add the Kotlin adapter for
@@ -43,7 +40,6 @@ private const val BASE_URL = " https://android-kotlin-fun-mars-server.appspot.co
 private val moshi = Moshi.Builder()
         .add(KotlinJsonAdapterFactory())
         .build()
-
 
 /**
  * Use the Retrofit builder to build a retrofit object using a Moshi converter with our Moshi
@@ -55,7 +51,6 @@ private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .build()
 
-
 /**
  * A public interface that exposes the [getProperties] method
  */
@@ -66,12 +61,11 @@ interface MarsApiService {
      * The @GET annotation indicates that the "realestate" endpoint will be requested with the GET
      * HTTP method
      */
-    @GET("realestate")
+    @GET("user_profiles")
     fun getProperties(@Query("filter") type: String):
     // The Coroutine Call Adapter allows us to return a Deferred, a Job with a result
             Deferred<List<MarsProperty>>
 }
-
 
 /**
  * A public Api object that exposes the lazy-initialized Retrofit service
@@ -79,5 +73,3 @@ interface MarsApiService {
 object MarsApi {
     val retrofitService : MarsApiService by lazy { retrofit.create(MarsApiService::class.java) }
 }
-
-

@@ -67,7 +67,7 @@
                 android:layout_marginTop="8dp"
                 android:textColor="#de000000"
                 android:textSize="20sp"
-                android:text="@{viewModel.id}"
+                android:text="@{viewModel.displayPropertyPrice}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/property_type_text"
                 tools:text="$100,000" />

@@ -35,12 +35,12 @@
         <ImageView
             android:id="@+id/mars_image"
             android:layout_width="match_parent"
-            android:layout_height="295dp"
+            android:layout_height="match_parent"
             android:adjustViewBounds="true"
             android:padding="2dp"
             android:scaleType="centerCrop"
             app:imageUrl="@{property.imgSrcUrl}"
-            tools:src="@tools:sample/backgrounds/scenic" />
+            tools:src="@tools:sample/backgrounds/scenic"/>
 
         <ImageView
             android:id="@+id/mars_property_type"
@@ -53,12 +53,5 @@
             android:visibility="@{property.rental ? View.GONE : View.VISIBLE}"
             android:src="@drawable/ic_for_sale_outline"
             tools:src="@drawable/ic_for_sale_outline"/>
-
-        <TextView
-            android:id="@+id/textViewPP"
-            android:layout_width="match_parent"
-            android:layout_height="202dp"
-            android:layout_gravity="bottom|end"
-            android:text="@{property.id}" />
     </FrameLayout>
 </layout>
