@@ -59,7 +59,7 @@
             android:layout_width="183dp"
             android:layout_height="84dp"
             android:background="@android:color/holo_blue_light"
-            android:text="User Name"
+            android:text="@{property.first_name}"
             android:textSize="20sp" />
     </FrameLayout>
 </layout>
